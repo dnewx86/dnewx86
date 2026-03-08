@@ -1,4 +1,5 @@
 import streamlit as st
+import ppv1_portafolio.paginas as paginas
 
 def componente_sidebar():
 
@@ -18,7 +19,6 @@ def componente_sidebar():
                 margin-bottom: 10px;
                 background-color: white;
                 color: black !important;
-                font-weight: bold !important;
                 border-radius: 12px;
                 border: 1px solid #454545;
                 cursor: pointer;
@@ -40,22 +40,20 @@ def componente_sidebar():
     """, unsafe_allow_html=True)
 
     st.sidebar.title("Proyecto PPV1")
+    
     opcion = st.sidebar.radio("Bienvenid@", ["A cerca de mí", "Conocimientos", "Proyectos", "Contacto"])
 
     if opcion == "A cerca de mí":
-        st.subheader("Home")
-        st.write("")
+        paginas.pagina_acercade()
 
     elif opcion == "Proyectos":
-        st.subheader("Proyectos")
-        st.write("")
+        paginas.pagina_proyectos()
 
     elif opcion == "Contacto":
-        st.subheader("Contacto")
-        st.write("")
+        paginas.pagina_contacto()
+
     elif opcion == "Conocimientos":
-        st.subheader("Conocimientos")
-        st.write("")
+        paginas.pagina_conocimientos()
+
     else:
-        st.subheader("Home")
-        st.write("")
+        paginas.pagina_acercade()
