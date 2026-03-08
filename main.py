@@ -1,5 +1,7 @@
 import streamlit as st
 
+from ppv1_portafolio.componente_sidebar import componente_sidebar
+
 
 st.set_page_config(
     page_title="Portafolio",
@@ -9,19 +11,4 @@ st.set_page_config(
 )
 
 
-st.sidebar.title("Menú")
-option = st.sidebar.radio("", ["Home", "Proyectos", "Contacto"])
-
-
-
-if option == "Home":
-    st.subheader("Página Home")
-    st.write("")
-
-elif option == "Proyectos":
-    st.subheader("Proyectos")
-    st.write("")
-
-elif option == "Contacto":
-    st.subheader("Contacto")
-    st.write("")
+componente_sidebar()
