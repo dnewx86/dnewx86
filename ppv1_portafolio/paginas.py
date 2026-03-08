@@ -1,23 +1,24 @@
 import streamlit as st
 
+from ppv1_portafolio.conf_rutas import LOGO_URL
+
 
 def pagina_acercade():
-    st.subheader("A cerca de mí")
+    st.title("🧑 A cerca de mí")
 
     col1, col2 = st.columns([1,3])
     
     with col1:
-        st.image("https://raw.githubusercontent.com/dnewx86/dnewx86/main/ppv1_portafolio/img/logo.png")
+        st.image(LOGO_URL)
     
     with col2:
-        st.title("Proyecto PPV1")
+        st.subheader("Proyecto PPV1")
         
         st.write("""
-            Por D' New x86
+            Por: D' New x86
             
             Bienvenid@ a mi portafolio.
             Estoy iniciando en el mundo del análisis de datos con un enfoque en tecnologías de código abierto.
-            Este es un proyecto personal.
             
             Puedes encontrarme en mis redes sociales:
         """)
@@ -58,12 +59,51 @@ def pagina_acercade():
 
 
 def pagina_conocimientos():
-    pass
+    st.title("📚 Conocimientos")
+
+    st.subheader('Tecnologías')
+
+    st.markdown("""
+        <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+        <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
+        <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" />
+        <br><br>
+    """, unsafe_allow_html=True)
+    
+    st.subheader('Cursos y certificaciones')
+
+    st.subheader('Otros')
 
 
 def pagina_proyectos():
-    pass
+    st.title("💼 Proyectos")
+
+    f1_col1, f1_col2, f1_col3 = st.columns(3)
+
+    with f1_col1:
+        st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/3840px-Python-logo-notext.svg.png")
+        st.write("Python")
+        st.write("Descripcion ....")
+
+    with f1_col2:
+        st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/3840px-Python-logo-notext.svg.png")
+        st.write("Python")
+        st.write("Descripcion ....")
+    
+    with f1_col3:
+        st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/3840px-Python-logo-notext.svg.png")
+        st.write("Python")
+        st.write("Descripcion ....")
 
 
 def pagina_contacto():
     pass
+
+
+def pagina_atribuciones():
+    st.title("📝 Atribuciones")
+
+    st.markdown("""
+        <a href="https://www.flaticon.com/free-icons/picture" title="picture icons">Picture icons created by Pixel perfect - Flaticon</a>
+    """, unsafe_allow_html=True)
+    

@@ -1,6 +1,8 @@
 import streamlit as st
 import ppv1_portafolio.paginas as paginas
 
+from ppv1_portafolio.conf_rutas import LOGO_URL
+
 def componente_sidebar():
 
     st.markdown("""
@@ -33,27 +35,31 @@ def componente_sidebar():
 
             div[role="radiogroup"] label div {
                 color: black !important;
-                font-weight: bold !important;
             }
 
         </style>
     """, unsafe_allow_html=True)
 
+    st.sidebar.image(LOGO_URL, width=100)
+
     st.sidebar.title("Proyecto PPV1")
     
-    opcion = st.sidebar.radio("Bienvenid@", ["A cerca de mí", "Conocimientos", "Proyectos", "Contacto"])
+    opcion = st.sidebar.radio("Bienvenid@", ["🧑 A cerca de mí", "📚 Conocimientos", "💼 Proyectos", "✉️ Contacto", "📝 Atribuciones"])
 
-    if opcion == "A cerca de mí":
+    if opcion == "🧑 A cerca de mí":
         paginas.pagina_acercade()
 
-    elif opcion == "Proyectos":
+    elif opcion == "💼 Proyectos":
         paginas.pagina_proyectos()
 
-    elif opcion == "Contacto":
+    elif opcion == "✉️ Contacto":
         paginas.pagina_contacto()
 
-    elif opcion == "Conocimientos":
+    elif opcion == "📚 Conocimientos":
         paginas.pagina_conocimientos()
+    
+    elif opcion == "📝 Atribuciones":
+        paginas.pagina_atribuciones()
 
     else:
         paginas.pagina_acercade()
