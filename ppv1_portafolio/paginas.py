@@ -1,7 +1,7 @@
 import streamlit as st
 
-from ppv1_portafolio.conf_rutas import LOGO_URL
-
+from ppv1_portafolio.conf_rutas import LOGO_URL, NO_IMAGEN_URL
+from ppv1_portafolio.utils import email_valido
 
 def pagina_acercade():
     st.title("🧑 A cerca de mí")
@@ -81,23 +81,72 @@ def pagina_proyectos():
     f1_col1, f1_col2, f1_col3 = st.columns(3)
 
     with f1_col1:
-        st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/3840px-Python-logo-notext.svg.png")
-        st.write("Python")
+        st.image(NO_IMAGEN_URL)
+        st.write("PROYECTO 1")
         st.write("Descripcion ....")
 
     with f1_col2:
-        st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/3840px-Python-logo-notext.svg.png")
-        st.write("Python")
+        st.image(NO_IMAGEN_URL)
+        st.write("PROYECTO 2")
         st.write("Descripcion ....")
     
     with f1_col3:
-        st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/3840px-Python-logo-notext.svg.png")
-        st.write("Python")
+        st.image(NO_IMAGEN_URL)
+        st.write("PROYECTO 3")
         st.write("Descripcion ....")
 
 
 def pagina_contacto():
-    pass
+    st.title("✉️ Contacto")
+
+    st.markdown("""
+<style>
+
+div[data-testid="stForm"] button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 155px;
+    padding: 10px 0;
+    margin: 5px;
+    background-color: white;
+    color: black !important;
+    border-radius: 12px;
+    border: 1px solid #454545;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+div[data-testid="stForm"] button:hover {
+    background-color: #A6A6A6;
+    border-color: #525252;
+    color: black !important;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
+    with st.form("Envíame un mensaje"):
+        nombre = st.text_input("Nombre *")
+        email = st.text_input("Correo electrónico *")
+        mensaje = st.text_area("Mensaje *")
+
+        enviar = st.form_submit_button("Enviar")
+
+    if enviar:
+        if not nombre or not email or not mensaje:
+            st.error("Todos los campos son obligatorios.")
+
+        if not email_valido(email):
+            st.error("Coloque un correo electrónico valido!")
+
+        else:
+            st.success("Formulario enviado correctamente.")
+            st.write("Nombre:", nombre)
+            st.write("Email:", email)
+            st.write("Mensaje:", mensaje)
+
+
 
 
 def pagina_atribuciones():
