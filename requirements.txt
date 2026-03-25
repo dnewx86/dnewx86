@@ -1,3 +1,0 @@
-# Python 3.10.19
-
-streamlit==1.54.0
