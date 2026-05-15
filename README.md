@@ -1,3 +1,5 @@
+# 👋
+
 <!--# Bienvenid@ 👋, mi nombre es Christian Mendieta
 
 Actualmente estoy aprendiendo de forma autodidacta desarrollo backend y análisis de datos utilizando Python como lenguaje principal.
